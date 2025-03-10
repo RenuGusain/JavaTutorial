@@ -1,4 +1,4 @@
-package com.renu.java.nio.file;
+package com.renu.java.tutorial.file;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;

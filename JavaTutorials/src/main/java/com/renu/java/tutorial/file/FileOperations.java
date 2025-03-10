@@ -1,4 +1,4 @@
-package com.renu.java.nio.file;
+package com.renu.java.tutorial.file;
 
 import java.io.IOException;
 import java.math.BigDecimal;
