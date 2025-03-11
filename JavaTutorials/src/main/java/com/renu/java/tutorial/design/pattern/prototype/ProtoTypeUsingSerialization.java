@@ -185,6 +185,7 @@ class Laptop implements Serializable {
 
 public class ProtoTypeUsingSerialization {
     public static void main(String[] args) {
+
         Laptop appleLaptop = new Laptop.LaptopBuilder()
                 .setBrand("Apple")
                 .setModel("MacBook Pro 16")
