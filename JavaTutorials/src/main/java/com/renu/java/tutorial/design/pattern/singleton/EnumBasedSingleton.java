@@ -22,6 +22,6 @@ class Demo
 {
     public static void main(String[] args) {
         EnumBasedSingleton enumBasedSingleton=EnumBasedSingleton.GREEN;
-        System.out.println( enumBasedSingleton.getValue());   
+        System.out.println( enumBasedSingleton.getValue());
     }
 }

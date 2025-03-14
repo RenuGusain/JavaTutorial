@@ -13,6 +13,9 @@ public class FileOperations {
     static Path rootDir = Paths.get("data");
 
     public static void main(String[] args) throws Exception {
+        Path path=Paths.get("res/capital.txt");
+        System.out.println(path);
+        System.out.println(path.toAbsolutePath());
         BigDecimal bigDecimal=new BigDecimal(new Double(95.89));
         System.out.println(bigDecimal);
         //

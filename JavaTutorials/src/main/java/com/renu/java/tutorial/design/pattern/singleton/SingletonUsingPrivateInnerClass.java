@@ -1,10 +1,15 @@
 package com.renu.java.tutorial.design.pattern.singleton;
+
+import java.io.BufferedReader;
+
 /*
 This is thread safe because the inner classes is loaded only
  when getInstance is called and jvm  synchronizes class loading internally
  */
 class Singleton
 {
+    //private static final Singleton InstanceEager=new Singleton();
+
     private Singleton(){}
      private static class InstanceHelper
     {
@@ -15,9 +20,14 @@ class Singleton
     {
         return InstanceHelper.Instance;
     }
+    public static void dosth()
+    {
+        System.out.println("I am singltone doing sth");
+
+    }
 }
 public class SingletonUsingPrivateInnerClass {
     public static void main(String[] args) {
-        Singleton singleton=Singleton.getInstance();
+
     }
 }
