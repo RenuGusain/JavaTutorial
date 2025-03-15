@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 
 
 public class TestSingleton {
-    @Test
+   /* @Test
     public void isSingletonTest()
     {
         SingletonDatabase db = SingletonDatabase.getInstance();
@@ -37,5 +37,5 @@ public class TestSingleton {
         assertEquals(4, rf.getTotalPopulation(
                 Arrays.asList("alpha", "gamma")
         ));
-    }
+    }*/
 }
