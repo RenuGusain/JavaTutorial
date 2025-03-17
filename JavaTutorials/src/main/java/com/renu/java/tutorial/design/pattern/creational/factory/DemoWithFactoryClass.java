@@ -1,4 +1,4 @@
-package com.renu.java.tutorial.design.pattern.factory;
+package com.renu.java.tutorial.design.pattern.creational.factory;
 
  class Point1 {
     private double x,y;

@@ -1,4 +1,4 @@
-package com.renu.java.tutorial.design.pattern.builder;
+package com.renu.java.tutorial.design.pattern.creational.builder;
 
 class Laptop {
     private final String os, name, color, processor, brand, model;

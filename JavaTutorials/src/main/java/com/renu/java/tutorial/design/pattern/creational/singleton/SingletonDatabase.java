@@ -1,15 +1,13 @@
-package com.renu.java.tutorial.design.pattern.singleton;
+package com.renu.java.tutorial.design.pattern.creational.singleton;
 
 
 import org.apache.commons.collections4.ListUtils;
 
 import java.io.File;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Dictionary;
-import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 

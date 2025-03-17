@@ -1,4 +1,4 @@
-package com.renu.java.tutorial.design.pattern.builder.inheritance;
+package com.renu.java.tutorial.design.pattern.creational.builder.inheritance;
 
 public class PersonBuilder <T extends PersonBuilder<T>>{
     protected String name;

@@ -1,4 +1,4 @@
-package com.renu.java.tutorial.design.pattern.builder.facade;
+package com.renu.java.tutorial.design.pattern.creational.builder.facade;
 
 public class Demo {
     public static void main(String[] args) {

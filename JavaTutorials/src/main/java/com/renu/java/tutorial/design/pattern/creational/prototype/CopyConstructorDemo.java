@@ -1,4 +1,4 @@
-package com.renu.java.tutorial.design.pattern.prototype;
+package com.renu.java.tutorial.design.pattern.creational.prototype;
 class Address
 {
     String name;

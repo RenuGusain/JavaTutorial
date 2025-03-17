@@ -1,6 +1,4 @@
-package com.renu.java.tutorial.design.pattern.singleton;
-
-import java.io.BufferedReader;
+package com.renu.java.tutorial.design.pattern.creational.singleton;
 
 /*
 This is thread safe because the inner classes is loaded only

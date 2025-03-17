@@ -1,4 +1,4 @@
-package com.renu.java.tutorial.design.pattern.builder.facade;
+package com.renu.java.tutorial.design.pattern.creational.builder.facade;
 
 public class Person {
     private final String city, pinCode, add1, add2, country, state;

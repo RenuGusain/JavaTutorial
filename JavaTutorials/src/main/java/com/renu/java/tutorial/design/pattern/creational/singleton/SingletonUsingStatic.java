@@ -1,4 +1,4 @@
-package com.renu.java.tutorial.design.pattern.singleton;
+package com.renu.java.tutorial.design.pattern.creational.singleton;
 
 import java.io.*;
 import java.nio.file.Files;

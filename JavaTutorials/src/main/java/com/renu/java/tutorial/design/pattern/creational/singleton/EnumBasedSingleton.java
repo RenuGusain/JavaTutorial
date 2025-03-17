@@ -1,4 +1,4 @@
-package com.renu.java.tutorial.design.pattern.singleton;
+package com.renu.java.tutorial.design.pattern.creational.singleton;
 
 public enum EnumBasedSingleton
 {
