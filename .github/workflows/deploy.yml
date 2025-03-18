@@ -33,14 +33,6 @@ jobs:
           AWS_REGION: us-east-1
           AWS_ECR_URI: ${{ secrets.AWS_ECR_URI }}
         run: |
-          echo "Using environment: tes"
-          echo "AWS_ACCESS_KEY_ID length: ${#AWS_ACCESS_KEY_ID}"
-          echo "AWS_SECRET_ACCESS_KEY length: ${#AWS_SECRET_ACCESS_KEY}"
-          echo "AWS_ECR_URI: $AWS_ECR_URI"
-          if [ -z "$AWS_ACCESS_KEY_ID" ] || [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
-            echo "AWS credentials are missing. Check GitHub Secrets in the tes environment."
-            exit 1
-          fi
           aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
           aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
           aws configure set region $AWS_REGION
