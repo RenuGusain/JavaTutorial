@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloWorldController {
-    @GetMapping
+    @GetMapping("/renu")
     public ResponseEntity<String>hello()
     {
         return  ResponseEntity.status(HttpStatus.OK).body("Hello Wrold! I am Renu");
