@@ -18,9 +18,13 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
+      - name: Given permission
+        run: chmod +x gradlew
+        
       - name: Build JAR file with Gradle
         run: ./gradlew clean build -x test
+      - name: Given permission
+        run: chmod +x gradlew
 
       - name: Log in to AWS ECR
         run: |
