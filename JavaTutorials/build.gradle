@@ -3,7 +3,11 @@ plugins {
 }
 
 group = 'renu.gusain.java.tutorials'
-version = '1.0-SNAPSHOT'
+
+jar {
+    archiveBaseName.set('my-app')
+    archiveVersion.set('0.0.1-SNAPSHOT')
+}
 
 repositories {
     mavenCentral()
@@ -16,6 +20,8 @@ dependencies {
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.17.0'
 
 
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.4.2'
 
         implementation 'org.apache.commons:commons-collections4:4.4'
 // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter

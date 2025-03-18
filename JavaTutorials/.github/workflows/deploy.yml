@@ -1,0 +1,53 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build JAR file with Gradle
+        run: ./gradlew clean build -x test
+
+      - name: Log in to AWS ECR
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_KEY }}
+          aws configure set region us-east-1
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_URI }}
+
+      - name: Build & Push Docker Image to ECR
+        run: |
+          docker build -t my-app .
+          docker tag my-app:latest ${{ secrets.AWS_ECR_URI }}/my-app:latest
+          docker push ${{ secrets.AWS_ECR_URI }}/my-app:latest
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Connect to EC2 and Deploy
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            sudo docker pull ${{ secrets.AWS_ECR_URI }}/my-app:latest
+            sudo docker stop my-app || true
+            sudo docker rm my-app || true
+            sudo docker run -d -p 80:8080 --name my-app ${{ secrets.AWS_ECR_URI }}/my-app:latest
