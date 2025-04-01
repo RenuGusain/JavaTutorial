@@ -9,12 +9,13 @@ public class LeetCode79 {
         char board[][] = {{'a', 'a', 'a', 'a'}, {'a', 'a', 'a', 'a'}, {'a', 'a', 'a', 'a'}};
 
         String word = "aaaaaaaaaaaaa";
-        System.out.println("output:" + problme.exist(board, word));
+        System.out.println("output:"+problme.exist(board, word));
     }
 
     public boolean exist(char[][] board, String word) {
         final int r = board.length;
         final int c = board[0].length;
+        if(word.length()>r*c)return false;
         boolean visited[][] = new boolean[r][c];
 
 
@@ -35,14 +36,14 @@ public class LeetCode79 {
     }
 
     private boolean backtrack(char[][] board, String word, boolean[][] visited, Position currentPosition) {
-        System.out.println(currentPosition);
+           System.out.println(currentPosition);
         if (word.isEmpty()) {
             return true;
         }
 
 
         if (visited[currentPosition.row][currentPosition.col]) {
-            //   System.out.println("Visitied");
+         //   System.out.println("Visitied");
             return false;
         }
 
@@ -54,7 +55,7 @@ public class LeetCode79 {
             return false;
         }
         String remainingString = word.substring(1);
-        //  System.out.println("remainingString:"+remainingString+" Length="+remainingString.length());
+      //  System.out.println("remainingString:"+remainingString+" Length="+remainingString.length());
         if (remainingString.isEmpty()) {
             return true;
         }
@@ -65,14 +66,16 @@ public class LeetCode79 {
             int newCol = currentPosition.col + dir.getColChange();
 
             Position position = new Position(newRow, newCol);
-            if (!isInValid(position, board.length, board[0].length)) {
+            if (! isInValid(position, board.length, board[0].length)) {
 
                 boolean result = backtrack(board, remainingString, visited, position);
-                //   System.out.println("String inside loop="+remainingString+" Length="+remainingString.length());
+             //   System.out.println("String inside loop="+remainingString+" Length="+remainingString.length());
                 if (result) return true;
 
 
+
             }
+
 
 
         }
