@@ -11,9 +11,15 @@ import java.util.stream.Stream;
 
 public class MagicString {
     private String string;
-  public MagicString(String string)
-    {
-       this.string=string;
+
+    public MagicString(String string) {
+        this.string = string;
+    }
+
+    public long getNoOfVowel() {
+        return this.string.chars().mapToObj(c -> (char) c)
+                .filter(c -> "aeiou".contains(c.toString()))
+                .count();
     }
 
     public int length() {
@@ -56,7 +62,7 @@ public class MagicString {
         return string.contentEquals(cs);
     }
 
-    
+
     public String[] split(String regex, int limit) {
         return string.split(regex, limit);
     }
@@ -145,7 +151,6 @@ public class MagicString {
     public void getBytes(int srcBegin, int srcEnd, byte[] dst, int dstBegin) {
         string.getBytes(srcBegin, srcEnd, dst, dstBegin);
     }
-
 
 
     public boolean endsWith(String suffix) {
@@ -268,7 +273,14 @@ public class MagicString {
         return string.getBytes();
     }
 
+    @Override
+    public String toString() {
+        return string;
+    }
+
     public boolean contains(CharSequence s) {
         return string.contains(s);
+
+
     }
 }
